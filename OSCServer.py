@@ -17,7 +17,7 @@ def gyro_handler(address, *args):
     print(f"{address}: {args}")
 
 def quat_handler(address, *args):
-    set.tracks[0].volume = max(args[3],0)
+    set.tracks[0].volume = max(args[3],0) //testing here. received Quaternion data will change Track 1's volume.
     print(f"{address}: {args}")
 
 dispatcher = Dispatcher()
