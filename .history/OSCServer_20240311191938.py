@@ -10,6 +10,9 @@ from live import *
 # mido.set_backend("mido.backends.rtmidi")
 
 set = Set(scan=True)
+gryo_vars = [0,0,0]
+accel_vars = [0,0,0]
+quat_var = [0,0,0,0]
 ACCEL=False
 GYRO=True
 QUAT=True
@@ -22,28 +25,8 @@ GyroScaler=DynamicScaler()
 AccelScaler=DynamicScaler()
 QuatScaler=DynamicScaler()
 
-def setAccelX():
-    midi_out.send_message([CONTROL_CHANGE, 60, 50])
-
-def setAccelY():
-    midi_out.send_message([CONTROL_CHANGE, 61, 50])
-
-def setAccelZ():
-    midi_out.send_message([CONTROL_CHANGE, 62, 50])
-
-def setGyroX():
-    midi_out.send_message([CONTROL_CHANGE, 63, 50])
-
-def setGyroY():
-    midi_out.send_message([CONTROL_CHANGE, 64, 50])
-
-def setGyroZ():
-    midi_out.send_message([CONTROL_CHANGE, 65, 50])
-input("select control and press enter to set GyroX")
-setGyroX()
-input("select control and press enter to set GyroY")
-setGyroY()
-input("select control and press enter to set GyroZ")
+def setGyroX:
+    midi_out.send_message([CONTROL_CHANGE, 60, args[0]])
 
 def accel_handler(address, *args):
     if ACCEL:

@@ -39,11 +39,10 @@ def setGyroY():
 
 def setGyroZ():
     midi_out.send_message([CONTROL_CHANGE, 65, 50])
-input("select control and press enter to set GyroX")
+input()
 setGyroX()
-input("select control and press enter to set GyroY")
+
 setGyroY()
-input("select control and press enter to set GyroZ")
 
 def accel_handler(address, *args):
     if ACCEL:
